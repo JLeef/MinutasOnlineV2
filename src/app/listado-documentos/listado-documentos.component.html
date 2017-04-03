@@ -1,0 +1,26 @@
+<div id="panelListado" class="panel panel-default">
+  <div id="bodyListado" class="panel-body">
+    <h3>Listado de Minutas, Actas, Informes</h3>
+    <hr>
+    <div id="overflowAgenda">
+      <div id="tableAgenda" class="divTable">
+        <div class="divTableBody">
+          <div id="headerTable" class="divTableRow">
+            <div class="divTableCell"> Titulo </div>
+            <div class="divTableCell"> Codigo </div>
+            <div class="divTableCell"> Fecha </div>
+            <div class="divTableCell"> Estado </div>
+            <div class="divTableCell"> Visualizar </div>
+          </div>
+          <div class="divTableRow" *ngFor="let item of lista">
+            <div class="divTableCell">  {{ item.tituloInforme }} </div>
+            <div class="divTableCell">  {{ item.id_informe    }} </div>
+            <div class="divTableCell">  {{ item.fechaInforme  }} </div>
+            <div class="divTableCell">  {{ item.estado        }} </div>
+            <div class="divTableCell"><a href="">Visualizar</a>  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

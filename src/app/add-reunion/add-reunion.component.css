@@ -1,0 +1,71 @@
+/* DivTable.com */
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	display: table-cell;
+	padding: 3px 10px;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
+#overflowReunion {
+    height: 300px;
+	overflow: auto;
+}
+#textDescription{
+    width: 90%;
+    /* margin-top: -3px; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#bodyReunion {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#addAsistente {
+	float: right;
+	margin-top: -60px;
+}
+#infoPerfil1{
+    float:left;
+    width: 47%;
+}
+#infoPerfil2{
+    float:right;
+    width: 47%;
+}
+
+#control_buttonsReunion{
+    float: right;
+    margin-right: 2%;
+    margin-top: -44px;
+}
+#enviarReunion {
+    float: right;
+    margin-top: -65px;
+}
+
+#btn_addReunion{
+    margin-right: 130px;
+}

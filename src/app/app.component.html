@@ -1,3 +1,58 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container body">
+  <div class="main_container">
+    <div class="col-md-3 left_col">
+      <div class="left_col scroll-view">
+        <div class="navbar nav_title" style="border: 0;">
+          <img src="app\styles\img\logo-facultad.png" href="#" width="200" height="70">
+        </div>
+        <br><br><br><br>
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+          <div class="menu_section">
+            <ul class="nav side-menu">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active"><i class="fa fa-home"></i>Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/listado_Documentos" routerLinkActive="active"><i class="fa fa-table"></i>Lista minutas</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-desktop"></i>Generar <span class="caret"></span></a>
+                <ul class="dropdown-menu" id="width">
+                  <li id="acta" class="nav-item">
+                    <a class="nav-link" routerLink="/generarActa" routerLinkActive="active"><i class="fa fa-circle"></i> Acta </a>
+                  </li>
+                  <li id="minuta" class="nav-item">
+                    <a class="nav-link" routerLink="/generarMinuta" routerLinkActive="active"><i class="fa fa-circle"></i> Minuta  </a>
+                  </li>
+                  <li id="informe" class="nav-item">
+                    <a class="nav-link" routerLink="/generarInforme" routerLinkActive="active"><i class="fa fa-circle"></i> Informe </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="top_nav">
+      <div class="nav_menu">
+        <nav>
+          <div class="nav toggle">
+            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="right_col" role="main" style="height: 100%">
+      <br><br><br><br>
+      <router-outlet></router-outlet>
+    </div>
+    <footer>
+      <div class="pull-right">
+        Universidad Andrés Bello - Facultad de Ingeniería - 2017 <a href="https://www.unab.cl">UNAB site</a>
+      </div>
+      <div class="clearfix"></div>
+    </footer>
+    <!-- /footer content -->
+  </div>
+</div>
