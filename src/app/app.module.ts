@@ -21,6 +21,7 @@ import { GenerarMinutaService }  from './generar-minuta/generar-minuta.service';
 import { ListadoService }        from './listado-documentos/listado-documentos.service';
 import { HomeService }           from './home/home.service';
 import { ProfileService }        from './profile/profile.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ProfileService }        from './profile/profile.service';
     AddReunionComponent,
     GenerarActaComponent,
     GenerarInformeComponent,
-    GenerarMinutaComponent
+    GenerarMinutaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
