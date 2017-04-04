@@ -7,7 +7,6 @@ import { AppComponent }               from './app.component';
 import { AppRoutingModule }           from './app-routing.module';
 import { HomeComponent }              from './home/home.component';
 import { ListadoDocumentosComponent } from './listado-documentos/listado-documentos.component';
-import { GenerarDocumentosComponent } from './generar-documentos/generar-documentos.component';
 import { ProfileComponent }           from './profile/profile.component';
 import { AddReunionComponent }        from './add-reunion/add-reunion.component';
 import { GenerarActaComponent }       from './generar-acta/generar-acta.component';
@@ -22,19 +21,24 @@ import { ListadoService }        from './listado-documentos/listado-documentos.s
 import { HomeService }           from './home/home.service';
 import { ProfileService }        from './profile/profile.service';
 import { LoginComponent } from './login/login.component';
+import { ViewPDFComponent } from './view-pdf/view-pdf.component';
+import { CompletarDocumentoComponent } from './completar-documento/completar-documento.component';
+import { PanelAdministratorComponent } from './panel-administrator/panel-administrator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ListadoDocumentosComponent,
-    GenerarDocumentosComponent,
     ProfileComponent,
     AddReunionComponent,
     GenerarActaComponent,
     GenerarInformeComponent,
     GenerarMinutaComponent,
-    LoginComponent
+    LoginComponent,
+    ViewPDFComponent,
+    CompletarDocumentoComponent,
+    PanelAdministratorComponent
   ],
   imports: [
     BrowserModule,

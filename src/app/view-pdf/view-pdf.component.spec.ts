@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { GenerarDocumentosComponent } from './generar-documentos.component';
+import { ViewPDFComponent } from './view-pdf.component';
 
-describe('GenerarDocumentosComponent', () => {
-  let component: GenerarDocumentosComponent;
-  let fixture: ComponentFixture<GenerarDocumentosComponent>;
+describe('ViewPDFComponent', () => {
+  let component: ViewPDFComponent;
+  let fixture: ComponentFixture<ViewPDFComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GenerarDocumentosComponent ]
+      declarations: [ ViewPDFComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GenerarDocumentosComponent);
+    fixture = TestBed.createComponent(ViewPDFComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
