@@ -21,9 +21,9 @@ USE `munab_v8`;
 DROP TABLE IF EXISTS `usuario`;
 
 CREATE TABLE `usuario` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id` varchar(45) NOT NULL,
   `Email` varchar(45) NOT NULL,
-  `Rol` varchar(45) NOT NULL,
+  `RolId` varchar(45) NOT NULL,
   `Nombre` varchar(45) NOT NULL,
   `Apellido` varchar(45) NOT NULL,
   `Telefono` varchar(45) NOT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE `reunion` (
 DROP TABLE IF EXISTS `usuarioproyecto`;
 
 CREATE TABLE `usuarioproyecto` (
-  `UsuarioId` int(11) NOT NULL,
+  `UsuarioId` varchar(45) NOT NULL,
   `ProyectoId` int(11) NOT NULL,
   `FechaIni` date NOT NULL,
   `FechaFin` date NOT NULL,
@@ -88,7 +88,7 @@ CREATE TABLE `usuarioproyecto` (
 DROP TABLE IF EXISTS `usuarioreunion`;
 
 CREATE TABLE `usuarioreunion` (
-  `UsuarioId` int(11) NOT NULL,
+  `UsuarioId` varchar(45) NOT NULL,
   `ReunionId` int(11) NOT NULL,
   `RolId` int(11) NOT NULL,
   `Asistencia` varchar(45) NOT NULL,
@@ -109,7 +109,7 @@ DROP TABLE IF EXISTS `acta`;
 
 CREATE TABLE `acta` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `UsuarioId` int(11) NOT NULL,
+  `UsuarioId` varchar(45) NOT NULL,
   `ReunionId` int(11) NOT NULL,
   `FechaIni` date NOT NULL,
   `FechaFin` date NOT NULL,
@@ -143,7 +143,7 @@ DROP TABLE IF EXISTS `minuta`;
 
 CREATE TABLE `minuta` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `UsuarioId` int(11) NOT NULL,
+  `UsuarioId` varchar(45) NOT NULL,
   `ReunionId` int(11) NOT NULL,
   `FechaIni` date NOT NULL,
   `FechaFin` date NOT NULL,
@@ -232,7 +232,7 @@ CREATE TABLE `objetivoespec` (
   CONSTRAINT `fk_OBJETIVOESPEC_OBJETIVOGENERAL1` FOREIGN KEY (`ObjectivoGeneralId`) REFERENCES `objetivogeneral` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*Table structure for table `status` */
+/*Table structure for table `rol` */
 
 DROP TABLE IF EXISTS `rol`;
 
@@ -278,10 +278,10 @@ CREATE TABLE `titulo` (
   PRIMARY KEY (`id_titulo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/ProyectoMinutas/database/import/status.csv'
+LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/MinutasOnlineV2/database/import/status.csv'
 INTO TABLE munab_v8.status
 FIELDS TERMINATED BY ';';
 
-LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/ProyectoMinutas/database/import/rol.csv'
+LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/MinutasOnlineV2/database/import/rol.csv'
 INTO TABLE munab_v8.rol
 FIELDS TERMINATED BY ';';
