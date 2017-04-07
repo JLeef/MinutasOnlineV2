@@ -28,8 +28,8 @@ CREATE TABLE `usuario` (
   `Apellido` varchar(45) NOT NULL,
   `Telefono` varchar(45) NOT NULL,
   `Password` varchar(45) NOT NULL,
-  `Firma` varchar(45) NOT NULL,
-  `Foto` varchar(45) DEFAULT NULL,
+  `Firma` longblob NOT NULL,
+  `Foto` longblob DEFAULT NULL,
   `StatusId` varchar(2) NOT NULL,
   PRIMARY KEY (`Id`,`Email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -284,4 +284,8 @@ FIELDS TERMINATED BY ';';
 
 LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/MinutasOnlineV2/database/import/rol.csv'
 INTO TABLE munab_v8.rol
+FIELDS TERMINATED BY ';';
+
+LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/MinutasOnlineV2/database/import/usuario.csv'
+INTO TABLE munab_v8.usuario
 FIELDS TERMINATED BY ';';
