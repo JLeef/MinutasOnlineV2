@@ -1,7 +1,7 @@
 {
-  "name": "munab_test",
+  "name": "application",
   "version": "1.0.0",
-  "description": "nuevo servidor test",
+  "description": "Servidor Minutas Online UNAB",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

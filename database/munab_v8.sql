@@ -90,7 +90,7 @@ DROP TABLE IF EXISTS `usuarioreunion`;
 CREATE TABLE `usuarioreunion` (
   `UsuarioId` varchar(45) NOT NULL,
   `ReunionId` int(11) NOT NULL,
-  `RolId` int(11) NOT NULL,
+  `RolId` varchar(2) NOT NULL,
   `Asistencia` varchar(45) NOT NULL,
   `Descripcion` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`UsuarioId`,`ReunionId`),
@@ -277,15 +277,3 @@ CREATE TABLE `titulo` (
   `subtitulo` varchar(45) NOT NULL,
   PRIMARY KEY (`id_titulo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/MinutasOnlineV2/database/import/status.csv'
-INTO TABLE munab_v8.status
-FIELDS TERMINATED BY ';';
-
-LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/MinutasOnlineV2/database/import/rol.csv'
-INTO TABLE munab_v8.rol
-FIELDS TERMINATED BY ';';
-
-LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/MinutasOnlineV2/database/import/usuario.csv'
-INTO TABLE munab_v8.usuario
-FIELDS TERMINATED BY ';';
