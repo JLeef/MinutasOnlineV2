@@ -18,9 +18,9 @@ USE `munab_v8`;
 
 /*Table structure for table `usuario` */
 
-DROP TABLE IF EXISTS `usuario`;
+DROP TABLE IF EXISTS `Usuario`;
 
-CREATE TABLE `usuario` (
+CREATE TABLE `Usuario` (
   `Id` varchar(45) NOT NULL,
   `Email` varchar(45) NOT NULL,
   `RolId` varchar(45) NOT NULL,
@@ -36,9 +36,9 @@ CREATE TABLE `usuario` (
 
 /*Table structure for table `proyecto` */
 
-DROP TABLE IF EXISTS `proyecto`;
+DROP TABLE IF EXISTS `Proyecto`;
 
-CREATE TABLE `proyecto` (
+CREATE TABLE `Proyecto` (
   `Id` int(11) NOT NULL,
   `FechaIni` date NOT NULL,
   `FechaFin` date NOT NULL,
@@ -50,9 +50,9 @@ CREATE TABLE `proyecto` (
 
 /*Table structure for table `reunion` */
 
-DROP TABLE IF EXISTS `reunion`;
+DROP TABLE IF EXISTS `Reunion`;
 
-CREATE TABLE `reunion` (
+CREATE TABLE `Reunion` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `ProyectoId` int(11) NOT NULL,
   `FechaIni` datetime NOT NULL,
@@ -68,14 +68,14 @@ CREATE TABLE `reunion` (
 
 /*Table structure for table `usuarioproyecto` */
 
-DROP TABLE IF EXISTS `usuarioproyecto`;
+DROP TABLE IF EXISTS `Usuarioproyecto`;
 
-CREATE TABLE `usuarioproyecto` (
+CREATE TABLE `Usuarioproyecto` (
   `UsuarioId` varchar(45) NOT NULL,
   `ProyectoId` int(11) NOT NULL,
   `FechaIni` date NOT NULL,
   `FechaFin` date NOT NULL,
-  `RolId` int(11) NOT NULL,
+  `RolId` varchar(2) NOT NULL,
   `StatusId` varchar(2) NOT NULL,
   PRIMARY KEY (`UsuarioId`,`ProyectoId`,`FechaIni`),
   KEY `fk_USUARIOPROYECTO_PROYECTO1_idx` (`ProyectoId`),
@@ -85,9 +85,9 @@ CREATE TABLE `usuarioproyecto` (
 
 /*Table structure for table `usuarioreunion` */
 
-DROP TABLE IF EXISTS `usuarioreunion`;
+DROP TABLE IF EXISTS `Usuarioreunion`;
 
-CREATE TABLE `usuarioreunion` (
+CREATE TABLE `Usuarioreunion` (
   `UsuarioId` varchar(45) NOT NULL,
   `ReunionId` int(11) NOT NULL,
   `RolId` varchar(2) NOT NULL,
@@ -105,9 +105,9 @@ CREATE TABLE `usuarioreunion` (
 
 /*Table structure for table `acta` */
 
-DROP TABLE IF EXISTS `acta`;
+DROP TABLE IF EXISTS `Acta`;
 
-CREATE TABLE `acta` (
+CREATE TABLE `Acta` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `UsuarioId` varchar(45) NOT NULL,
   `ReunionId` int(11) NOT NULL,
@@ -122,9 +122,9 @@ CREATE TABLE `acta` (
 
 /*Table structure for table `agenda` */
 
-DROP TABLE IF EXISTS `agenda`;
+DROP TABLE IF EXISTS `Agenda`;
 
-CREATE TABLE `agenda` (
+CREATE TABLE `Agenda` (
   `ActaId` int(11) NOT NULL,
   `UsuarioResponsableId` int(11) NOT NULL,
   `FechaIni` date NOT NULL,
@@ -139,9 +139,9 @@ CREATE TABLE `agenda` (
 
 /*Table structure for table `minuta` */
 
-DROP TABLE IF EXISTS `minuta`;
+DROP TABLE IF EXISTS `Minuta`;
 
-CREATE TABLE `minuta` (
+CREATE TABLE `Minuta` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `UsuarioId` varchar(45) NOT NULL,
   `ReunionId` int(11) NOT NULL,
@@ -157,9 +157,9 @@ CREATE TABLE `minuta` (
 
 /*Table structure for table `compromiso` */
 
-DROP TABLE IF EXISTS `compromiso`;
+DROP TABLE IF EXISTS `Compromiso`;
 
-CREATE TABLE `compromiso` (
+CREATE TABLE `Compromiso` (
   `ActaId` int(11) NOT NULL,
   `UsuarioResponsableId` int(11) NOT NULL,
   `FechaIni` date NOT NULL,
@@ -173,9 +173,9 @@ CREATE TABLE `compromiso` (
 
 /*Table structure for table `compromisominuta` */
 
-DROP TABLE IF EXISTS `compromisominuta`;
+DROP TABLE IF EXISTS `Compromisominuta`;
 
-CREATE TABLE `compromisominuta` (
+CREATE TABLE `Compromisominuta` (
   `MinutaId` int(11) NOT NULL,
   `UsuarioResponsableId` int(11) NOT NULL,
   `FechaIni` date NOT NULL,
@@ -189,9 +189,9 @@ CREATE TABLE `compromisominuta` (
 
 /*Table structure for table `informe` */
 
-DROP TABLE IF EXISTS `informe`;
+DROP TABLE IF EXISTS `Informe`;
 
-CREATE TABLE `informe` (
+CREATE TABLE `Informe` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `ProyectoId` int(11) NOT NULL,
   `FechaIni` date NOT NULL,
@@ -205,9 +205,9 @@ CREATE TABLE `informe` (
 
 /*Table structure for table `objetivogeneral` */
 
-DROP TABLE IF EXISTS `objetivogeneral`;
+DROP TABLE IF EXISTS `Objetivogeneral`;
 
-CREATE TABLE `objetivogeneral` (
+CREATE TABLE `Objetivogeneral` (
   `Id` int(11) NOT NULL,
   `InformeId` int(11) NOT NULL,
   `ObjetivoGeneral` varchar(45) NOT NULL,
@@ -220,9 +220,9 @@ CREATE TABLE `objetivogeneral` (
 
 /*Table structure for table `objetivoespec` */
 
-DROP TABLE IF EXISTS `objetivoespec`;
+DROP TABLE IF EXISTS `Objetivoespec`;
 
-CREATE TABLE `objetivoespec` (
+CREATE TABLE `Objetivoespec` (
   `Id` int(11) NOT NULL,
   `ObjectivoGeneralId` int(11) NOT NULL,
   `ObjetivoEspec` varchar(45) NOT NULL,
@@ -234,9 +234,9 @@ CREATE TABLE `objetivoespec` (
 
 /*Table structure for table `rol` */
 
-DROP TABLE IF EXISTS `rol`;
+DROP TABLE IF EXISTS `Rol`;
 
-CREATE TABLE `rol` (
+CREATE TABLE `Rol` (
   `Id` varchar(2) NOT NULL,
   `Grupo` varchar(2) NOT NULL,
   `Rol` varchar(45) NOT NULL,
@@ -247,7 +247,7 @@ CREATE TABLE `rol` (
 
 DROP TABLE IF EXISTS `status`;
 
-CREATE TABLE `status` (
+CREATE TABLE `Status` (
   `Id` varchar(2) NOT NULL,
   `Grupo` varchar(2) NOT NULL,
   `Status` varchar(45) NOT NULL,
@@ -256,9 +256,9 @@ CREATE TABLE `status` (
 
 /*Table structure for table `temario` */
 
-DROP TABLE IF EXISTS `temario`;
+DROP TABLE IF EXISTS `Temario`;
 
-CREATE TABLE `temario` (
+CREATE TABLE `Temario` (
   `MinutaId` int(11) NOT NULL,
   `Temario` varchar(45) NOT NULL,
   `Desarrollo` varchar(250) DEFAULT NULL,
@@ -267,13 +267,57 @@ CREATE TABLE `temario` (
   CONSTRAINT `fk_TEMARIO_MINUTA1` FOREIGN KEY (`MinutaId`) REFERENCES `minuta` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*Table structure for table `titulo` */
+/*Views*/
 
-DROP TABLE IF EXISTS `titulo`;
+/*View structure between Usuario Reunión */
 
-CREATE TABLE `titulo` (
-  `id_titulo` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(45) NOT NULL,
-  `subtitulo` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_titulo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP VIEW IF EXISTS `V_Usuarioreunion`;
+
+CREATE VIEW V_Usuarioreunion
+AS SELECT 
+  UReunion.UsuarioId UsuarioId,
+  Usuario.Nombre Nombre,
+  UReunion.RolId RolId,
+  Rol.Rol Rol,
+  Proyecto.Id ProyectoId,
+  Proyecto.Titulo ProyectoTitulo
+FROM 
+  munab_v8.Rol Rol,
+  munab_v8.Reunion Reunion,
+  munab_v8.Proyecto Proyecto,
+  munab_v8.Usuarioreunion UReunion,
+  munab_v8.Usuario Usuario
+WHERE Rol.Id = UReunion.RolId
+and Rol.Grupo = '2'
+and Usuario.Id = UsuarioId
+GROUP BY UsuarioId;
+
+/*Imports*/
+
+LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/MinutasOnlineV2/database/import/Status.csv'
+INTO TABLE munab_v8.Status
+FIELDS TERMINATED BY ';';
+
+LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/MinutasOnlineV2/database/import/Rol.csv'
+INTO TABLE munab_v8.Rol
+FIELDS TERMINATED BY ';';
+
+LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/MinutasOnlineV2/database/import/Usuario.csv'
+INTO TABLE munab_v8.Usuario
+FIELDS TERMINATED BY ';';
+
+LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/MinutasOnlineV2/database/import/Proyecto.csv'
+INTO TABLE munab_v8.Proyecto
+FIELDS TERMINATED BY ';';
+
+LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/MinutasOnlineV2/database/import/Reunion.csv'
+INTO TABLE munab_v8.Reunion
+FIELDS TERMINATED BY ';';
+
+LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/MinutasOnlineV2/database/import/Usuarioproyecto.csv'
+INTO TABLE munab_v8.Usuarioproyecto
+FIELDS TERMINATED BY ';';
+
+LOAD DATA INFILE '/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/MinutasOnlineV2/database/import/Usuarioreunion.csv'
+INTO TABLE munab_v8.Usuarioreunion
+FIELDS TERMINATED BY ';';
