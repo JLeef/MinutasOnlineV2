@@ -1,5 +1,7 @@
-En `/database/munab_v8` modificar 
-`'/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/ProyectoMinutas/database/import/status.csv'` 
-`'/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/ProyectoMinutas/database/import/rol.csv'` y
-`'/Users/juan-pabloandresbarahonaaravena/dev/NodeJs/ProyectoMinutas/database/import/usuario.csv'`
- por ruta local correspondiente al OS.
+Para arracar Front-End:
+
+1º Ingresar en la carpeta ui/
+
+2º ´npm install´
+
+3º ´gulp serve´
